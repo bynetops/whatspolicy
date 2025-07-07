@@ -324,21 +324,6 @@
             <p><i class="fas fa-calendar-check icon"></i> <strong>Effective Date:</strong> July 8, 2025</p>
         </div>
         
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="#" class="back-button"><i class="fas fa-arrow-left"></i> Back to App</a>
-        </div>
     </div>
-
-    <script>
-        // script to handle back button animation
-        document.querySelector('.back-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            this.classList.add('clicked');
-            setTimeout(() => {
-                this.classList.remove('clicked');
-                alert('Navigating back to the app...');
-            }, 300);
-        });
-    </script>
 </body>
 </html>

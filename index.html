@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - WhatsApp Status Saver</title>
+    <title>Privacy Policy - Dual Status Saver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,61 +16,65 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
+            min-height: 100vh;
+            padding: 15px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 20px auto;
             background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 20px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .logo i {
+            font-size: 32px;
+            color: white;
         }
 
         h1 {
             color: #25D366;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2.2em;
+            margin-bottom: 5px;
+            font-size: 1.8rem;
         }
 
         .subtitle {
-            text-align: center;
             color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        h2 {
-            color: #2c3e50;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            border-bottom: 2px solid #25D366;
-            padding-bottom: 5px;
-        }
-
-        h3 {
-            color: #34495e;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 8px;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         .highlight {
@@ -78,129 +83,262 @@
             border-left: 4px solid #25D366;
             margin: 20px 0;
             border-radius: 5px;
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #25D366;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
         }
 
         .contact-info {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
+            background: linear-gradient(to bottom, #f8f9fa, #e8f5e8);
+            padding: 20px 15px;
+            border-radius: 10px;
+            margin-top: 25px;
             text-align: center;
+            border: 1px solid #e0e0e0;
         }
 
         .last-updated {
             text-align: center;
             color: #666;
             font-style: italic;
-            margin-top: 30px;
+            margin-top: 25px;
             padding-top: 20px;
             border-top: 1px solid #eee;
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
+        .section-icon {
+            margin-right: 10px;
+            color: #25D366;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        @media (max-width: 480px) {
             .container {
-                padding: 20px;
-                margin: 10px;
+                padding: 20px 15px;
+                margin: 10px auto;
             }
             
             h1 {
-                font-size: 1.8em;
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            h3 {
+                font-size: 1.05rem;
+            }
+            
+            .highlight {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-info {
+                padding: 15px 10px;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo i {
+                font-size: 28px;
+            }
+            
+            ul, li, p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 18px 12px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.15rem;
+            }
+            
+            .highlight {
+                padding: 10px;
+            }
+            
+            .contact-info {
+                padding: 12px 8px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="subtitle">WhatsApp Status Saver App</p>
+        <div class="header">
+            <div class="logo">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">WhatsApp Status Saver App</p>
+        </div>
 
         <div class="highlight">
+            <i class="fas fa-exclamation-circle section-icon"></i>
             <strong>Important Notice:</strong> This app is designed to help you save WhatsApp statuses from your own device. We are committed to protecting your privacy and ensuring your data remains secure.
         </div>
 
-        <h2>1. Information We Collect</h2>
+        <h2><i class="fas fa-database section-icon"></i>1. Information We Collect</h2>
         <p>Our WhatsApp Status Saver app is designed with privacy in mind. We collect minimal information to provide you with the best possible experience:</p>
         
         <h3>Data We Access:</h3>
         <ul>
-            <li><strong>Local Storage Access:</strong> The app accesses your device's local storage to locate WhatsApp status files</li>
-            <li><strong>Media Files:</strong> We access status images and videos stored locally on your device</li>
-            <li><strong>App Usage Data:</strong> Basic usage statistics to improve app performance (optional)</li>
+            <li><i class="fas fa-folder-open icon"></i> <strong>Local Storage Access:</strong> The app accesses your device's local storage to locate WhatsApp status files</li>
+            <li><i class="fas fa-images icon"></i> <strong>Media Files:</strong> We access status images and videos stored locally on your device</li>
+            <li><i class="fas fa-chart-line icon"></i> <strong>App Usage Data:</strong> Basic usage statistics to improve app performance (optional)</li>
         </ul>
 
         <h3>Data We Do NOT Collect:</h3>
         <ul>
-            <li>Personal messages or chat content</li>
-            <li>Contact information</li>
-            <li>Location data</li>
-            <li>Device identifiers for tracking</li>
-            <li>Any data that could identify you personally</li>
+            <li><i class="fas fa-ban icon"></i> Personal messages or chat content</li>
+            <li><i class="fas fa-ban icon"></i> Contact information</li>
+            <li><i class="fas fa-ban icon"></i> Location data</li>
+            <li><i class="fas fa-ban icon"></i> Device identifiers for tracking</li>
+            <li><i class="fas fa-ban icon"></i> Any data that could identify you personally</li>
         </ul>
 
-        <h2>2. How We Use Your Information</h2>
+        <h2><i class="fas fa-cogs section-icon"></i>2. How We Use Your Information</h2>
         <p>The information accessed by our app is used solely for the following purposes:</p>
         <ul>
-            <li>To display available WhatsApp statuses for saving</li>
-            <li>To enable you to save status media to your device</li>
-            <li>To organize and manage saved content within the app</li>
-            <li>To improve app functionality and user experience</li>
+            <li><i class="fas fa-eye icon"></i> To display available WhatsApp statuses for saving</li>
+            <li><i class="fas fa-save icon"></i> To enable you to save status media to your device</li>
+            <li><i class="fas fa-folder icon"></i> To organize and manage saved content within the app</li>
+            <li><i class="fas fa-sync-alt icon"></i> To improve app functionality and user experience</li>
         </ul>
 
-        <h2>3. Data Storage and Security</h2>
+        <h2><i class="fas fa-shield-alt section-icon"></i>3. Data Storage and Security</h2>
         <p>We take the security of your data seriously:</p>
         <ul>
-            <li><strong>Local Storage:</strong> All status files are processed and stored locally on your device</li>
-            <li><strong>No Cloud Storage:</strong> We do not upload your media files to any external servers</li>
-            <li><strong>Encryption:</strong> Sensitive data is encrypted when stored locally</li>
-            <li><strong>Secure Access:</strong> We use secure methods to access WhatsApp status folders</li>
+            <li><i class="fas fa-mobile-alt icon"></i> <strong>Local Storage:</strong> All status files are processed and stored locally on your device</li>
+            <li><i class="fas fa-cloud-slash icon"></i> <strong>No Cloud Storage:</strong> We do not upload your media files to any external servers</li>
+            <li><i class="fas fa-lock icon"></i> <strong>Encryption:</strong> Sensitive data is encrypted when stored locally</li>
+            <li><i class="fas fa-key icon"></i> <strong>Secure Access:</strong> We use secure methods to access WhatsApp status folders</li>
         </ul>
 
-        <h2>4. Third-Party Services</h2>
+        <h2><i class="fas fa-external-link-alt section-icon"></i>4. Third-Party Services</h2>
         <p>Our app may use third-party services for:</p>
         <ul>
-            <li><strong>Analytics:</strong> To understand app usage patterns (anonymized data only)</li>
-            <li><strong>Crash Reporting:</strong> To identify and fix app issues</li>
-            <li><strong>Advertisements:</strong> To support free app development (if applicable)</li>
+            <li><i class="fas fa-chart-pie icon"></i> <strong>Analytics:</strong> To understand app usage patterns (anonymized data only)</li>
+            <li><i class="fas fa-bug icon"></i> <strong>Crash Reporting:</strong> To identify and fix app issues</li>
+            <li><i class="fas fa-ad icon"></i> <strong>Advertisements:</strong> To support free app development (if applicable)</li>
         </ul>
         <p>These services have their own privacy policies and we encourage you to review them.</p>
 
-        <h2>5. Permissions</h2>
+        <h2><i class="fas fa-key section-icon"></i>5. Permissions</h2>
         <p>Our app requires the following permissions to function properly:</p>
         <ul>
-            <li><strong>Storage Access:</strong> To read and save WhatsApp status files</li>
-            <li><strong>Media Access:</strong> To display and organize media files</li>
-            <li><strong>Internet Access:</strong> For optional features like updates and analytics</li>
+            <li><i class="fas fa-hdd icon"></i> <strong>Storage Access:</strong> To read and save WhatsApp status files</li>
+            <li><i class="fas fa-photo-video icon"></i> <strong>Media Access:</strong> To display and organize media files</li>
+            <li><i class="fas fa-wifi icon"></i> <strong>Internet Access:</strong> For optional features like updates and analytics</li>
         </ul>
 
-        <h2>6. Your Rights and Choices</h2>
+        <h2><i class="fas fa-user-shield section-icon"></i>6. Your Rights and Choices</h2>
         <p>You have the following rights regarding your data:</p>
         <ul>
-            <li>Access and view what data the app processes</li>
-            <li>Delete saved files at any time</li>
-            <li>Disable analytics and optional data sharing</li>
-            <li>Uninstall the app to remove all associated data</li>
+            <li><i class="fas fa-search icon"></i> Access and view what data the app processes</li>
+            <li><i class="fas fa-trash-alt icon"></i> Delete saved files at any time</li>
+            <li><i class="fas fa-toggle-off icon"></i> Disable analytics and optional data sharing</li>
+            <li><i class="fas fa-trash icon"></i> Uninstall the app to remove all associated data</li>
         </ul>
 
-        <h2>7. Children's Privacy</h2>
+        <h2><i class="fas fa-child section-icon"></i>7. Children's Privacy</h2>
         <p>Our app is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have inadvertently received personal information from a child under 13, we will delete such information from our records.</p>
 
-        <h2>8. Changes to Privacy Policy</h2>
+        <h2><i class="fas fa-sync-alt section-icon"></i>8. Changes to Privacy Policy</h2>
         <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy within the app. You are advised to review this privacy policy periodically for any changes.</p>
 
-        <h2>9. Legal Disclaimer</h2>
+        <h2><i class="fas fa-gavel section-icon"></i>9. Legal Disclaimer</h2>
         <p>This app is not affiliated with, endorsed by, or connected to WhatsApp Inc. or Meta Platforms. WhatsApp is a trademark of Meta Platforms, Inc. Users are responsible for respecting the privacy and rights of others when using this app.</p>
 
         <div class="contact-info">
-            <h2>Contact Us</h2>
+            <h2><i class="fas fa-envelope section-icon"></i>Contact Us</h2>
             <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
-            <p><strong>Email:</strong> privacy@yourapp.com</p>
-            <p><strong>Support:</strong> support@yourapp.com</p>
+            <p><i class="fas fa-envelope icon"></i> <strong>Email:</strong> dchemwetich@outlook.com</p>
+            <p><i class="fas fa-headset icon"></i> <strong>Support:</strong> support@netops.ink</p>
         </div>
 
         <div class="last-updated">
-            <p>Last Updated: [DATE]</p>
-            <p>Effective Date: [DATE]</p>
+            <p><i class="fas fa-calendar-alt icon"></i> <strong>Last Updated:</strong> July 8, 2025</p>
+            <p><i class="fas fa-calendar-check icon"></i> <strong>Effective Date:</strong> July 8, 2025</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="#" class="back-button"><i class="fas fa-arrow-left"></i> Back to App</a>
         </div>
     </div>
+
+    <script>
+        // script to handle back button animation
+        document.querySelector('.back-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.add('clicked');
+            setTimeout(() => {
+                this.classList.remove('clicked');
+                alert('Navigating back to the app...');
+            }, 300);
+        });
+    </script>
 </body>
 </html>
